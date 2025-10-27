@@ -2,6 +2,7 @@ package equipa11;
 /**
  * @author beatriz silva
  */
+
 import java.util.ArrayList;
 import jakarta.persistence.*;
 
