@@ -25,7 +25,13 @@ public class Utilizador {
 	}
 
 	public String getPassword() {return password;}
-	public void setPassword(String password) {this.password = password;}
+	public void setPassword(String password) {
+		if (password.length() < 8) {  // Se a password tiver menos de 8 caracteres
+			System.out.println("A password deve ter pelo menos 8 caracteres!");
+		} else {
+			this.password = password;  // Senão, guarda a password
+		}
+	}
 	public String getNome() {return nome;}
 	public String getEmail() {return email;}
 	
