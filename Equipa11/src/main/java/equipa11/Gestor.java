@@ -2,18 +2,18 @@ package equipa11;
 /**
  * 
  */
-import java.util.ArrayList;
+import java.util.ArrayList; 
 
-//A classe 'Session' representa uma ligação (sessão) individual entre a aplicação e a base de dados.
-//É através da Session que executamos operações como guardar, atualizar, eliminar e consultar objetos.
+//a classe "Session" representa uma ligação entre a aplicação e a base de dados.
+//através da "sessão" fazemos operações: guardar, atualizar, eliminar e consultar objetos.
 import org.hibernate.Session;
 
-//A 'SessionFactory' é responsável por criar objetos do tipo Session.
-//Atua como uma “fábrica” de sessões para comunicar com a base de dados.
+//"SessionFactory" é responsável por criar objetos do tipo Session.
+//é como uma “fábrica” de sessões para comunicar com a base de dados.
 import org.hibernate.SessionFactory;
 
-//A classe 'Configuration' é usada para configurar o Hibernate,
-//lendo o ficheiro 'hibernate.cfg.xml' e criando a SessionFactory com base nas definições lá presentes.
+//"Configuration" é usada para configurar o hibernate
+//lê o ficheiro 'hibernate.cfg.xml' e cria a SessionFactory com base nas definições que estão no ficheiro
 import org.hibernate.cfg.Configuration;
 
 public class Gestor {
@@ -36,7 +36,7 @@ public class Gestor {
 		this.utilizadores = new ArrayList<>();
 		this.setProgramaV(new ArrayList<>());
 		
-		// Configuração do Hibernate
+		// Configuração do hibernate
 		try {
 			factory = new Configuration().configure().buildSessionFactory();
 		}
