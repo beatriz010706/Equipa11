@@ -20,7 +20,6 @@ public class Parceiro extends Utilizador{
 	public Parceiro(String nome, String email, String password, String local) {
 		super(nome, email, password);
 		this.local = local;
-		this.tipoParceiro = tipoParceiro;
 	}
 
 	public String getLocal() {return local;}
