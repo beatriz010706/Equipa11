@@ -1,4 +1,9 @@
 package equipa11;
+
+import java.util.ArrayList;
+public class Gestor {
+	private ArrayList<Estudante> estudantes;
+	private ArrayList<Parceiro> parceiros;
 /**
  * 
  */
@@ -76,6 +81,8 @@ public class Gestor {
 		return null;
 	}
 	
+
+}//fim classe Gestor
 	/**
 	  * Regista um novo tipo de parceiro 
 	  * @author Diogo
