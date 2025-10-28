@@ -1,4 +1,7 @@
 package equipa11;
+/**
+ * @author gonçalo
+ */
 
 import java.util.ArrayList;
 import java.util.List;

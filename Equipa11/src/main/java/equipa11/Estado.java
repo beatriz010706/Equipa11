@@ -1,4 +1,7 @@
 package equipa11;
+/**
+ * @author gonçalo
+ */
 
 import jakarta.persistence.*;
 
@@ -35,4 +38,4 @@ public class Estado {
 	public void setEstadoCandidatura(String estadoCandidatura) {
 		this.estadoCandidatura = estadoCandidatura;
 	}
-}
+}//fim classe estado

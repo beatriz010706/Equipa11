@@ -41,4 +41,4 @@ public class ProgramaEstudante {
 	public void setEmitirDiploma(boolean emitirDiploma) {
 		this.emitirDiploma = emitirDiploma;
 		}
-}
+}//fim classe ProgramaEstudante
