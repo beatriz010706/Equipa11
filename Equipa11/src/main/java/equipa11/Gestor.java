@@ -78,6 +78,7 @@ public class Gestor {
 	
 	/**
 	  * Regista um novo tipo de parceiro 
+	  * @author Diogo
 	  */
 	  public void registoTipo(String descricao) {
 	  Tipo novoTipo = new Tipo();
