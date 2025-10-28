@@ -81,26 +81,28 @@ public class Gestor {
 	  * @author Diogo
 	  */
 	  public void registoTipo(String descricao) {
-	  Tipo novoTipo = new Tipo();
-	  // Como o atributo é privado, adicionamos um setter simples na classe Tipo
-	  novoTipo.setDescriçaoTipo(descricao);
-	  tipos.add(novoTipo);
-	  System.out.println("Tipo \"" + descricao + "\" registado com sucesso!");
+		  Tipo novoTipo = new Tipo();
+		  // Como o atributo é privado, adicionamos um setter simples na classe Tipo
+		  novoTipo.setDescriçaoTipo(descricao);
+		  tipos.add(novoTipo);
+		  System.out.println("Tipo \"" + descricao + "\" registado com sucesso!");
 	  }
+	  
 	  /**
 	  * Lista todos os parceiros associados a um determinado tipo.
+	  * @author diogo
 	  */
 	  public void listarParceiroPorTipo(String descricao) {
-	  for (Tipo t : tipos) {
-	  if (t.getDescriçaoTipo().equalsIgnoreCase(descricao)) {
-	  System.out.println("Parceiros do tipo: " + descricao);
-	  for (Parceiro p : t.getTipoParceiros()) {
-	  System.out.println(p);
-	  }
-	  return;
-	  }
-	  }
-	  System.out.println("Tipo \"" + descricao + "\" não encontrado!");
+		  for (Tipo t : tipos) {
+			  if (t.getDescriçaoTipo().equalsIgnoreCase(descricao)) {
+				  System.out.println("Parceiros do tipo: " + descricao);
+				  for (Parceiro p : t.getTipoParceiros()) {
+					  System.out.println(p);
+				  }
+				  return;
+			  }
+		  }
+		  System.out.println("Tipo \"" + descricao + "\" não encontrado!");
 	  }
 
 	
