@@ -5,10 +5,9 @@
   <modelVersion>4.0.0</modelVersion>
 
   
-  <groupId>upt.lp.hibernate</groupId>
-  <artifactId>hibernate-intro</artifactId>
+  <groupId>upt_LP</groupId>
+  <artifactId>Equipa11</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>Hibernate CRUD First Example Program</name>
   
   <dependencies>
 	<!-- hibernate ORM 6.2.x-->
