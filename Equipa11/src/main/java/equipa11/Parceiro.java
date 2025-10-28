@@ -14,18 +14,27 @@ public class Parceiro extends Utilizador{
 	private long idUtilizador;//FK
 	private long idTipo;//FK
 	private String local;
+	private ArrayList<ProgramaVoluntariado> programaV = new ArrayList<>();
 
 	public Parceiro() {}
 	public Parceiro(String nome, String email, String password, String local) {
 		super(nome, email, password);
 		this.local = local;
+		this.tipoParceiro = tipoParceiro;
 	}
 
 	public String getLocal() {return local;}
+	public ArrayList<ProgramaVoluntariado> getProgramaV() {return programaV;}
+	public void setProgramaV(ArrayList<ProgramaVoluntariado> programaV) {this.programaV = programaV;}
+	public void setLocal(String local) {this.local = local;}
+
 	
 	@Override
 	public String toString() {
-		return "Parceiro [local=" + local + "]";
+		return "Parceiro [idParceiro=" + idParceiro + ", idUtilizador=" + idUtilizador + ", idTipo=" + idTipo
+				+ ", local=" + local + ", programaV=" + programaV + "]";
 	}
-
+	
+	
+	
 }//fim classe Parceiro
