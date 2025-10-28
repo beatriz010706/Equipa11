@@ -34,7 +34,7 @@ public class Teste {
             System.out.println("0 - Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = ler.nextInt();
-            ler.nextLine(); // Consumir o \n
+            ler.nextLine(); // limpar buffer
 
             switch (opcao) {
                 case 1:

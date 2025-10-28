@@ -37,7 +37,18 @@ public class Gestor {
 		this.setProgramaV(new ArrayList<>());
 		
 		// Configuração do Hibernate
-        factory = new Configuration().configure().buildSessionFactory();
+		try {
+			factory = new Configuration().configure().buildSessionFactory();
+		}
+		catch(Exception e) {
+			System.out.println("Stack trace.");
+			//  Block of code to handle errors 
+            e.printStackTrace();
+            
+            System.out.println("Something went wrong.");
+            // Prints what exception has been thrown
+            System.out.println(e);
+		}
 	}
 		
 		
@@ -191,7 +202,7 @@ public class Gestor {
 
 	  
 	  /**
-	   * metodo para eleminar um programa
+	   * metodo para eliminar um programa
 	   * @author miguel silva
 	   */ 
 	  
@@ -337,3 +348,4 @@ public class Gestor {
 	}
 
 }//fim classe Gestor
+
