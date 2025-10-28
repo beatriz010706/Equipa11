@@ -4,10 +4,20 @@ import java.util.ArrayList;
 public class Gestor {
 	private ArrayList<Estudante> estudantes;
 	private ArrayList<Parceiro> parceiros;
+/**
+ * 
+ */
+import java.util.ArrayList;
+public class Gestor {
+	
+	private ArrayList<Estudante> estudantes;
+	private ArrayList<Parceiro> parceiros;
+	private ArrayList<Tipo> tipos;
 	
 	public Gestor() {
 		this.estudantes = new ArrayList<>();
 		this.parceiros = new ArrayList<>();
+		this.tipos = new ArrayList<>();
 	}
 	
 	/**
@@ -73,3 +83,36 @@ public class Gestor {
 	
 
 }//fim classe Gestor
+	/**
+	  * Regista um novo tipo de parceiro 
+	  * @author Diogo
+	  */
+	  public void registoTipo(String descricao) {
+		  Tipo novoTipo = new Tipo();
+		  // Como o atributo é privado, adicionamos um setter simples na classe Tipo
+		  novoTipo.setDescriçaoTipo(descricao);
+		  tipos.add(novoTipo);
+		  System.out.println("Tipo \"" + descricao + "\" registado com sucesso!");
+	  }
+	  
+	  /**
+	  * Lista todos os parceiros associados a um determinado tipo.
+	  * @author diogo
+	  */
+	  public void listarParceiroPorTipo(String descricao) {
+		  for (Tipo t : tipos) {
+			  if (t.getDescriçaoTipo().equalsIgnoreCase(descricao)) {
+				  System.out.println("Parceiros do tipo: " + descricao);
+				  for (Parceiro p : t.getTipoParceiros()) {
+					  System.out.println(p);
+				  }
+				  return;
+			  }
+		  }
+		  System.out.println("Tipo \"" + descricao + "\" não encontrado!");
+	  }
+
+	
+
+}//fim classe Gestor
+-
