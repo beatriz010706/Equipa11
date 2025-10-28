@@ -1,4 +1,5 @@
 /**
+ /**
  * @author diogo
  */
 package equipa11;
@@ -49,4 +50,3 @@ public class Tipo {
 	
 	
 }
-
