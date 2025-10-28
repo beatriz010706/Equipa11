@@ -3,12 +3,15 @@ package equipa11;
  * 
  */
 import java.util.ArrayList;
+
 //A classe 'Session' representa uma ligação (sessão) individual entre a aplicação e a base de dados.
 //É através da Session que executamos operações como guardar, atualizar, eliminar e consultar objetos.
 import org.hibernate.Session;
+
 //A 'SessionFactory' é responsável por criar objetos do tipo Session.
 //Atua como uma “fábrica” de sessões para comunicar com a base de dados.
 import org.hibernate.SessionFactory;
+
 //A classe 'Configuration' é usada para configurar o Hibernate,
 //lendo o ficheiro 'hibernate.cfg.xml' e criando a SessionFactory com base nas definições lá presentes.
 import org.hibernate.cfg.Configuration;
