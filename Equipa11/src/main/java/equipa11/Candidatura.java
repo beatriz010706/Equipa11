@@ -13,7 +13,6 @@ public class Candidatura {
 	private long idEstado; //FK
 	private long idProgVoluntariado; //FK
 	private String dataSubmissao;
-	private ArrayList <Estado> estado;
 	/**
 	 * @param dataSubmissao
 	 * @param estado
@@ -46,37 +45,5 @@ public class Candidatura {
 	public void setDataSubmissao(String dataSubmissao) {
 		this.dataSubmissao = dataSubmissao;
 	}
-	public ArrayList<Estado> getEstado() {
-		return estado;
-	}
-	public void setEstado(ArrayList<Estado> estado) {
-		this.estado = estado;
-	}
-	
-	public void alterarEstado(Estado novoEstado) {
-		if (estado == null){
-			estado = new ArrayList<>();
-		}
-		estado.add(novoEstado);
-	}
-	
-	public void listarporEstado() {
-		ArrayList <Estado> aceite = new ArrayList<>();;
-		ArrayList <Estado> andamento = new ArrayList<>();;
-		ArrayList <Estado> recusado = new ArrayList<>();;
-		for (Estado i : estado) {
-			if(i.getEstadoCandidatura().equalsIgnoreCase("Aceite")) {
-				aceite.add(i);
-			}
-			if(i.getEstadoCandidatura().equalsIgnoreCase("Em andamento")) {
-				andamento.add(i);
-			}
-			if(i.getEstadoCandidatura().equalsIgnoreCase("Recusada")) {
-				recusado.add(i);
-			}
-		}
-		System.out.println("Aceite: " + aceite);
-		System.out.println("Em andamento: " + andamento);
-		System.out.println("Recusada: " + recusado);
-	}
-}
+		
+}//fim classe candidatura

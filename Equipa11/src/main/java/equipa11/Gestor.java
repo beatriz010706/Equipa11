@@ -2,20 +2,14 @@ package equipa11;
 
 import java.util.ArrayList;
 public class Gestor {
-	private ArrayList<Estudante> estudantes;
-	private ArrayList<Parceiro> parceiros;
-/**
- * 
- */
-import java.util.ArrayList;
-public class Gestor {
 	
 	private ArrayList<Estudante> estudantes;
 	private ArrayList<Parceiro> parceiros;
 	private ArrayList<Tipo> tipos;
 	private ArrayList<Utilizador> utilizadores; // Estudantes e Parceiros
-	private ArrayList<ProgramaEstudante>programas; // Programas de voluntariado dos
-	estudantes
+	private ArrayList<ProgramaEstudante>programas; // Programas de voluntariado dos estudantes
+	private ArrayList<Estado> estado;
+	
 	
 	public Gestor() {
 		this.estudantes = new ArrayList<>();
@@ -86,8 +80,6 @@ public class Gestor {
 		return null;
 	}
 	
-
-}//fim classe Gestor
 	/**
 	  * Regista um novo tipo de parceiro 
 	  * @author Diogo
@@ -161,6 +153,38 @@ public class Gestor {
 		   System.out.println("Horas feitas: " + programa.getHorasFeitas());
 		   System.out.println("Diploma emitido: " + (programa.isEmitirDiploma() ? "Sim" : "Não"));
 	   }
+	   /**
+	    * @author gonçalo
+	    */
+	   public void alterarEstado(Estado novoEstado) {
+			if (estado == null){
+				estado = new ArrayList<>();
+			}
+			estado.add(novoEstado);
+		}
+	   /**
+	    * @author gonçalo
+	    */
+		
+		public void listarporEstado() {
+			ArrayList <Estado> aceite = new ArrayList<>();;
+			ArrayList <Estado> andamento = new ArrayList<>();;
+			ArrayList <Estado> recusado = new ArrayList<>();;
+			for (Estado i : estado) {
+				if(i.getEstadoCandidatura().equalsIgnoreCase("Aceite")) {
+					aceite.add(i);
+				}
+				if(i.getEstadoCandidatura().equalsIgnoreCase("Em andamento")) {
+					andamento.add(i);
+				}
+				if(i.getEstadoCandidatura().equalsIgnoreCase("Recusada")) {
+					recusado.add(i);
+				}
+			}
+			System.out.println("Aceite: " + aceite);
+			System.out.println("Em andamento: " + andamento);
+			System.out.println("Recusada: " + recusado);
+		}
 
 }//fim classe Gestor
 
