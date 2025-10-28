@@ -8,7 +8,7 @@
   <groupId>upt_LP</groupId>
   <artifactId>Equipa11</artifactId>
   <version>0.0.1-SNAPSHOT</version>
- 
+
   
   <dependencies>
 	<!-- hibernate ORM 6.2.x-->
