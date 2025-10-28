@@ -8,11 +8,13 @@ public class Gestor {
 	private ArrayList<Estudante> estudantes;
 	private ArrayList<Parceiro> parceiros;
 	private ArrayList<Tipo> tipos;
+	private ArrayList<ProgramaVoluntariado> programas;
 	
 	public Gestor() {
 		this.estudantes = new ArrayList<>();
 		this.parceiros = new ArrayList<>();
 		this.tipos = new ArrayList<>();
+		this.programas = new ArrayList<>();
 	}
 	
 	/**
@@ -81,29 +83,46 @@ public class Gestor {
 	  * @author Diogo
 	  */
 	  public void registoTipo(String descricao) {
-	  Tipo novoTipo = new Tipo();
-	  // Como o atributo é privado, adicionamos um setter simples na classe Tipo
-	  novoTipo.setDescriçaoTipo(descricao);
-	  tipos.add(novoTipo);
-	  System.out.println("Tipo \"" + descricao + "\" registado com sucesso!");
+
+		  Tipo novoTipo = new Tipo();
+		  // Como o atributo é privado, adicionamos um setter simples na classe Tipo
+		  novoTipo.setDescriçaoTipo(descricao);
+		  tipos.add(novoTipo);
+		  System.out.println("Tipo: " + descricao +" registado com sucesso!");
 	  }
+	  
 	  /**
 	  * Lista todos os parceiros associados a um determinado tipo.
+	  * @author diogo
 	  */
 	  public void listarParceiroPorTipo(String descricao) {
-	  for (Tipo t : tipos) {
-	  if (t.getDescriçaoTipo().equalsIgnoreCase(descricao)) {
-	  System.out.println("Parceiros do tipo: " + descricao);
-	  for (Parceiro p : t.getTipoParceiros()) {
-	  System.out.println(p);
-	  }
-	  return;
-	  }
-	  }
-	  System.out.println("Tipo \"" + descricao + "\" não encontrado!");
+		  for (Tipo t : tipos) {
+			  if (t.getDescriçaoTipo().equalsIgnoreCase(descricao)) {
+				  System.out.println("Parceiros do tipo: " + descricao);
+				  for (Parceiro p : t.getTipoParceiros()) {
+					  System.out.println(p);
+				  }
+				  return;
+			  }
+		  }
+		  System.out.println("Tipo: " + descricao +" não encontrado!");
 	  }
 
 	
+	  /**
+	   * metodo para criar um programa
+	   * @author miguel silva
+	   */ 
+	  public void criarPrograma(String titulo, String descricao, int horasServiço, String local, int vagas) {
+		  ProgramaVoluntariado novoPrograma = new ProgramaVoluntariado(titulo, descricao, horasServiço, local, vagas);
+		  programas.add(novoPrograma);
+		  System.out.println("Programa criado com sucesso: "+ titulo);  
+	  }
+	  
+	  
+	  
+	  
+	  
 
 }//fim classe Gestor
 
