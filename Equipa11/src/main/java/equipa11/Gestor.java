@@ -13,11 +13,16 @@ public class Gestor {
 	private ArrayList<Estudante> estudantes;
 	private ArrayList<Parceiro> parceiros;
 	private ArrayList<Tipo> tipos;
+	private ArrayList<Utilizador> utilizadores; // Estudantes e Parceiros
+	private ArrayList<ProgramaEstudante>programas; // Programas de voluntariado dos
+	estudantes
 	
 	public Gestor() {
 		this.estudantes = new ArrayList<>();
 		this.parceiros = new ArrayList<>();
 		this.tipos = new ArrayList<>();
+		this.utilizadores = new ArrayList<>();
+		this.programas = new ArrayList<>();
 	}
 	
 	/**
@@ -111,8 +116,51 @@ public class Gestor {
 		  }
 		  System.out.println("Tipo \"" + descricao + "\" não encontrado!");
 	  }
-
-	
+	 
+	  /**
+	   * Regista um novo programa de voluntariado para um estudante.
+	   * @author ines 
+	   */
+	   public void adicionarPrograma(ProgramaEstudante p) {
+		   programas.add(p);
+		   System.out.println("Programa de voluntariado registado com sucesso!");		
+	   }
+	   /**
+	   * Método para registar horas de um estudante.
+	   * Se atingir 30 horas, o diploma é automaticamente emitido.
+	   * @author ines
+	   */
+	   public void registarHoras(ProgramaEstudante programa, int horasAdicionais) {
+		   int total = programa.getHorasFeitas() + horasAdicionais;
+		   programa.setHorasFeitas(total);
+		   System.out.println("Horas registadas com sucesso! Total atual: " + total + " horas.");
+		   // Verifica se o estudante já tem direito a diploma
+		   if (total >= 30 && !programa.isEmitirDiploma()) {
+			   	emitirCertificado(programa);
+		   	}
+	   }
+	 /**
+	  * Emite o certificado se o estudante tiver 30 ou mais horas feitas.
+	  * @author ines
+	  */
+	 public void emitirCertificado(ProgramaEstudante programa) {
+		 if (programa.getHorasFeitas() >= 30) {
+			 programa.setEmitirDiploma(true); // ativa o diploma diretamente
+			 System.out.println("Certificado emitido com sucesso!");
+		 } else {
+			 System.out.println("Ainda não atingiu as 30 horas para o certificado!");
+		 }
+	 }
+	 /**
+	   * Consulta e mostra os dados do programa de voluntariado de um estudante.
+	   * @author ines
+	   */
+	   public void consultarProgramaVoluntariado(ProgramaEstudante programa) {
+		   System.out.println("=== Programa de Voluntariado ===");
+		   System.out.println("Data de fim: " + programa.getDataFim());
+		   System.out.println("Horas feitas: " + programa.getHorasFeitas());
+		   System.out.println("Diploma emitido: " + (programa.isEmitirDiploma() ? "Sim" : "Não"));
+	   }
 
 }//fim classe Gestor
--
+
