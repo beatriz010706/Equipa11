@@ -27,9 +27,25 @@ public class Tipo {
 	public long getIdTipo() {
 		return idTipo;
 	}
+	
+	
+
+	public void setDescriçaoTipo(String descriçaoTipo) {
+		this.descriçaoTipo = descriçaoTipo;
+	}
 
 	public String getDescriçaoTipo() {
 		return descriçaoTipo;
 	}
+
+	public ArrayList<Parceiro> getTipoParceiros() {
+		return tipoParceiros;
+	}
+
+	public void setTipoParceiros(ArrayList<Parceiro> tipoParceiros) {
+		this.tipoParceiros = tipoParceiros;
+	}
+	
+	
 	
 }
