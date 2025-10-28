@@ -109,20 +109,6 @@ public class Gestor {
 	  }
 
 	
-	  /**
-	   * metodo para criar um programa
-	   * @author miguel silva
-	   */ 
-	  public void criarPrograma(String titulo, String descricao, int horasServiço, String local, int vagas) {
-		  ProgramaVoluntariado novoPrograma = new ProgramaVoluntariado(titulo, descricao, horasServiço, local, vagas);
-		  programas.add(novoPrograma);
-		  System.out.println("Programa criado com sucesso: "+ titulo);  
-	  }
 	  
-	  
-	  
-	  
-	  
-
 }//fim classe Gestor
 
