@@ -38,6 +38,7 @@ public class ProgramaEstudante {
 		return emitirDiploma;
 	}
 	
-	
-	
+	public void setEmitirDiploma(boolean emitirDiploma) {
+		this.emitirDiploma = emitirDiploma;
+		}
 }

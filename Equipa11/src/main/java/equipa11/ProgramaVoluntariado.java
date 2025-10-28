@@ -23,6 +23,8 @@ public class ProgramaVoluntariado {
 	private String local;
 	private int vagas;
 	private ArrayList<Candidaturas> candidaturaE;
+	private int vagas;
+	private ArrayList<Candidatura> candidaturaE;
 	private ArrayList<ProgramaEstudante> programaE;
 	
 	public ProgramaVoluntariado() {}

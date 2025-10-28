@@ -4,7 +4,6 @@ package equipa11;
  */
 import jakarta.persistence.*;
 
-
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table (name = "Utilizador")
