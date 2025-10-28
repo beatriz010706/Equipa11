@@ -108,7 +108,69 @@ public class Gestor {
 		  System.out.println("Tipo: " + descricao +" não encontrado!");
 	  }
 
-	
+	  /**
+	   * metodo para criar um programa
+	   * @author miguel silva
+	   */ 
+	  public void criarPrograma(String titulo, String descricao, int horasServiço, String local, int vagas) {
+		  ProgramaVoluntariado novoPrograma = new ProgramaVoluntariado(titulo, descricao, horasServiço, local, vagas);
+		  programas.add(novoPrograma);
+		  System.out.println("Programa criado com sucesso: "+ titulo);  
+	  }
+	  
+	  /**
+	   * metodo para editar um programa
+	   * @author miguel silva
+	   */ 
+	  
+	  public void editarPrograma(String tituloAntigo, String novoTitulo, String novaDescricao, int novasHorasServiço, String novoLocal, int novasVagas) {
+		  for (ProgramaVoluntariado p : programas) {
+			  if (p.getTitulo().equalsIgnoreCase(tituloAntigo)) {
+				  p.setTitulo(novoTitulo);
+				  p.setDescrição(novaDescricao);
+				  p.setHorasServiço(novasHorasServiço);
+				  p.setLocal(novoLocal);
+				  p.setVagas(novasVagas);
+				  System.out.println("Programa: " + tituloAntigo +" editado com sucesso!");
+				  return;
+			  }
+		  }
+		  System.out.println("Programa com título: " + tituloAntigo +" não encontrado!");
+	  }
+
+	  
+	  /**
+	   * metodo para eleminar um programa
+	   * @author miguel silva
+	   */ 
+	  
+	  public void eliminarPrograma(String titulo) {
+		  for (int i = 0; i < programas.size(); i++) {
+			  if (programas.get(i).getTitulo().equalsIgnoreCase(titulo)) {
+				  programas.remove(i);
+				  System.out.println("Programa: "+ titulo +" eliminado com sucesso!");
+				  return;
+			  }
+		  }
+		  System.out.println("Programa: " + titulo +" não encontrado!");
+	  }
+
+	 
+	  /**
+	   * metodo para listar um programa
+	   * @author miguel silva
+	   */ 
+	  
+	  public void listarProgramas() {
+		  if (programas.isEmpty()) {
+			  System.out.println("Não existem programas registados.");
+		  } else {
+			  System.out.println("Lista de Programas:");
+			  for (ProgramaVoluntariado p : programas) {
+				  System.out.println("Titulo: " + p.getTitulo() + " | Local: " + p.getLocal() + " | Vagas: " + p.getVagas());
+			  }
+		  }
+	  }
 	  
 }//fim classe Gestor
 
