@@ -11,6 +11,7 @@ public class Utilizador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idUtilizador;
+	
 	private String nome;
 	private String email;
 	private String password;
@@ -22,10 +23,14 @@ public class Utilizador {
 		this.email = email;
 		this.password = password;
 	}
-
+	
+	public long getIdUtilizador() {return idUtilizador;}
+	
 	public String getPassword() {return password;}
 	public void setPassword(String password) {this.password = password;}
+	
 	public String getNome() {return nome;}
+	
 	public String getEmail() {return email;}
 	
 	@Override

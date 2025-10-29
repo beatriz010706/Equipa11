@@ -1,7 +1,9 @@
 package equipa11;
 
-import java.util.ArrayList;
+import java.util.ArrayList; 
 import java.util.Scanner;
+import org.hibernate.Session;
+
 public class Teste {
 
 	public static void main(String[] args) {
@@ -153,7 +155,7 @@ public class Teste {
                     if (!gestor.getProgramaE().isEmpty()) {
                         gestor.emitirCertificado(gestor.getProgramaE().get(0));
                     } else {
-                        System.out.println("Não existem programas de estudantes.");
+                        System.out.println("Não existem programas registados em estudantes.");
                     }
                     break;
 
@@ -161,7 +163,7 @@ public class Teste {
                     if (!gestor.getProgramaE().isEmpty()) {
                         gestor.consultarProgramaVoluntariado(gestor.getProgramaE().get(0));
                     } else {
-                        System.out.println("Não existem programas de estudantes.");
+                        System.out.println("Não existem programas de voluntariado.");
                     }
                     break;
 
@@ -187,6 +189,7 @@ public class Teste {
         }//fim while
         
         ler.close();
+        gestor.fecharConexao();
 
 	}//fim main
 
